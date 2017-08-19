@@ -186,7 +186,7 @@
 			<div class="zentai">
 				<h2>◇全体</h2>
 				<p>全体に向けての情報を入れてください</p>
-				<div class="zentai1">
+				<div class="zentai11">
 					<h4>◆メッセージ（200文字まで）</h4>
 
 					<p><textarea cols="40" id="info" rows="10" name="info" maxlength="200"></textarea></p>
