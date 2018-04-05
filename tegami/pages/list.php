@@ -8,7 +8,7 @@ $file3 = $_FILES["imgup3"]["name"];
 $filename = $path . $file;
 if (is_uploaded_file($_FILES["imgup"]["tmp_name"])) {
   if (move_uploaded_file($_FILES["imgup"]["tmp_name"], $filename)) {
-    chmod("files/" . $filename, 0644);
+    //chmod("files/" . $filename, 0644);
     echo "";
   } else {
     echo "";
@@ -20,7 +20,7 @@ if (is_uploaded_file($_FILES["imgup"]["tmp_name"])) {
 $filename1=$path . $file1;
 if (is_uploaded_file($_FILES["imgup1"]["tmp_name"])) {
   if (move_uploaded_file($_FILES["imgup1"]["tmp_name"], $filename1)) {
-    chmod("files/" . $filename1, 0644);
+    //chmod("files/" . $filename1, 0644);
     echo "";
   } else {
     echo "";
@@ -31,7 +31,7 @@ if (is_uploaded_file($_FILES["imgup1"]["tmp_name"])) {
 $filename2=$path . $file2;
 if (is_uploaded_file($_FILES["imgup2"]["tmp_name"])) {
   if (move_uploaded_file($_FILES["imgup2"]["tmp_name"], $filename2)) {
-    chmod("files/" . $filename2, 0644);
+    //chmod("files/" . $filename2, 0644);
     echo "";
   } else {
     echo "";
@@ -42,7 +42,7 @@ if (is_uploaded_file($_FILES["imgup2"]["tmp_name"])) {
 $filename3=$path . $file3;
 if (is_uploaded_file($_FILES["imgup3"]["tmp_name"])) {
   if (move_uploaded_file($_FILES["imgup3"]["tmp_name"], $filename3)) {
-    chmod("files/" . $filename3, 0644);
+    //chmod("files/" . $filename3, 0644);
     echo "";
   } else {
     echo "";
@@ -79,10 +79,19 @@ $result = mysql_query("INSERT INTO mikan(name,day,reader,name1,name2,info,yotei,
 <head>
 	<meta charset="UTF-8">
 	<title>未完者リスト</title>
+  <style type="text/css">
+.bt1{
+  width:336px;
+  margin:20px auto 0 auto;
+  //margin-top: 10px;
+  text-align:center;
+}
+      
+</style>
 </head>
 <body>
-	<h1 align="center">未完者リスト</h1>
-	<form method="post" action="update.php"enctype="multipart/form-data">  
+	<h1 align="center" style="font-family: 'ＫＦひま字';">未完者リスト</h1>
+	<form method="post" action="update.php" enctype="multipart/form-data">  
 	<div align="center">
   <input type="hidden" name="photo1" value="$file">
   <input type="hidden" name="photo2" value="$file1">
@@ -95,12 +104,12 @@ $result = mysql_query("INSERT INTO mikan(name,day,reader,name1,name2,info,yotei,
 
 			$cnt = 0;
       while($array = mysql_fetch_array($result)) {
-       if ($cnt === 0) { print '<table>' . PHP_EOL; }
+       if ($cnt === 0) { print '<table cellspacing="0" style=" border: 2px solid #bc372b;">' . PHP_EOL; }
         if ($cnt % 6 === 0) {
           if ($cnt !== 0) { print '</tr>' . PHP_EOL; }
-          print '<tr>';
+          print '<tr style="border-bottom: 1px solid #bfa797;">';
         }
-       print '<td align="center"><h2><a href="mletter.php?no='.$array["no"].'">'.$array["name"]. '</a>｜</h2></td>';
+       print '<td align="center" bgcolor="fff8e3" width="150" style="border: 1px solid #bc372b;"><h2><a href="mletter.php?no='.$array["no"].'">'.$array["name"]. '</a></h2></td>';
         $cnt++;
       }
       if ($cnt !== 0) {
@@ -115,7 +124,9 @@ $result = mysql_query("INSERT INTO mikan(name,day,reader,name1,name2,info,yotei,
       }
 
     ?>
-    <a href="../letter.php"><img src="../img/m.png" alt=""></a>
+    <div class="bt1">
+    <a href="../letters.php"><img src="../img/btn_back_edit.png" alt=""></a>
+    </div>
 		</div>
 	</form>
 </body>

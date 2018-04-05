@@ -244,10 +244,6 @@ EOM;
 }
 ?>
 
-<div id="print"align="center">
-      <a href="#" onclick="document.s1.submit(); return false;"><img src="../img/familyHistory_print.png"></a>
-  <?php   echo' <a href="#" onclick="document.s1.submit(); return false;"><img src="../img/back_l.png"></a>';?>
-</div>
 
 </form>
   </body>

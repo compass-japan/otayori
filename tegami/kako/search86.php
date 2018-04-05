@@ -96,8 +96,28 @@ $no = $_GET["no"];
     <meta http-equiv="Content-type"content="text/html;charset=UTF-8">
     <title>プレビュー画面</title>
     <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <SCRIPT src="../js/jquery-3.2.1.min.js" type="text/javascript"></SCRIPT>
+    <script>
+$(function(){
+  var showTop = 1900;
+
+  $('body').append('<a href="javascript:void(0);" id="fixedTop">TOPへ</a>');
+  var fixedTop = $('#fixedTop');
+  fixedTop.on('click',function(){
+    $('html,body').animate({scrollTop:'0'},700);
+  });
+  $(window).on('load scroll resize',function(){
+    if($(window).scrollTop() >= showTop){
+      fixedTop.fadeIn('normal');
+    } else if($(window).scrollTop() < showTop){
+      fixedTop.fadeOut('normal');
+    }
+  });
+});
+</script>
   </head>
-  <body"f3f3f3">
+  <body>
   <form method="post" action="../pages/upletter.php?no=<?php echo $no ?>"id="form" name="s1" enctype="multipart/form-data">
   <?php
       $today = date("Y/m/d");
@@ -243,11 +263,6 @@ $no = $_GET["no"];
 EOM;
 }
 ?>
-
-<div id="print"align="center">
-      <a href="#" onclick="document.s1.submit(); return false;"><img src="../img/familyHistory_print.png"></a>
-  <?php   echo' <a href="#" onclick="document.s1.submit(); return false;"><img src="../img/back_l.png"></a>';?>
-</div>
 
 </form>
   </body>

@@ -90,6 +90,16 @@ $no = $_GET["no"];
     <title>プレビュー画面</title>
     <link rel="stylesheet" href="../css/home.css" />
     <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <SCRIPT src="../js/jquery-3.2.1.min.js" type="text/javascript"></SCRIPT>
+    <script>
+    	function pageUp(){
+		 scrollBy(0, -1352*5);
+		}
+		function pageDown(){
+		  scrollBy(0, 1352*5);
+		}
+</script>
     <style type="text/css">
 
       body {
@@ -141,10 +151,15 @@ border: transparent 8px solid;
     border: transparent 4px solid;
   table-layout: fixed;
 }
+.page-break{
+	page-break-after: always; 
+}
+
       </style>
   </head>
-  <body"f3f3f3">
+  <body>
   <form method="post" action="toshi1.php" id="form" name="s1" enctype="multipart/form-data">
+  	
   <?php
      $today = date("Y/m/d");
     //  echo $today;
@@ -272,7 +287,11 @@ border: transparent 8px solid;
       <input type="hidden" name="cap11" value="$cap11">
       <input type="hidden" name="kg" value="$kg">
       <input type="hidden" name="mmhg" value="$mmhg">
-       <div id="print">コントロール(Ctrl)+sを押して名前を付けて保存してください</div>
+       <div id="print">コントロール(Ctrl)+sを押して名前を付けて保存してください
+          <div class="haichi" id="floating-menu">
+  		<img src="../img/up.png" class="cursorOn" onclick="pageUp()"/>
+    	<img src="../img/down.png" class="cursorOn" onclick="pageDown()"/>
+	</div></div>
        <div id="print"><a href="#" onclick="document.s1.submit(); return false;"><img src="../img/back_l.png"></a></div>
           
           <Table class="toptable" background="../img/back_autumn.png" width="1100" height="553"style="border-style:solid;border-width:5px;
@@ -332,7 +351,7 @@ border: transparent 8px solid;
                </Tr>
             </table>
 
-          <table  $style1 class="big" width="1100" height="100%">
+          <table  $style1 class="big" width="1050" height="100%">
                 <Tr>
                 <Td align="center" height="auto"><img src="$photo11"class="photop"></Td>
                 </Tr>
@@ -349,19 +368,15 @@ border: transparent 8px solid;
                 <Td height="2"></Td>
                </Tr>
                <Tr>
-                <Td height="23" bgcolor="#4169e1"></Td>
+                <Td height="23" bgcolor="#4169e1" ></Td>
                </Tr>
             </table>
-         
+         <div class="page-break">
+         </div>
 
 EOM;
 }
 ?>
-
-<div id="print"align="center">
-      <a href="#" onclick="document.s1.submit(); return false;"><img src="../img/familyHistory_print.png"></a>
-  <?php   echo' <a href="#" onclick="document.s1.submit(); return false;"><img src="../img/back_l.png"></a>';?>
-</div>
 
 </form>
   </body>

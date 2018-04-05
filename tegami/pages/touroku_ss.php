@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	/*
 $path = "../img/photo/";
 $file0 = $_FILES["imgup0"]["name"];
@@ -104,7 +104,7 @@ $result = mysql_query("INSERT INTO complet(name,day,day1,day2,reader,name1,name2
 			//$row['name']はmikanテーブルからとってきた全未完者
 			$nameD = $row['name'];
 			//もし未完者リストにある名前と本登録前のプレビュー画面の名前が一致したものがあったらその名前をリストから消す
-			if( $nameD == $names ){
+			if( $nameD == $names && $mmhgD == $mmhgs){
 				$result2 = mysql_query("delete from mikan where name LIKE \"$nameD\" ");
 			}
 	    }
@@ -117,7 +117,7 @@ $result = mysql_query("INSERT INTO complet(name,day,day1,day2,reader,name1,name2
 	<title>登録</title>
 	<SCRIPT src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></SCRIPT>
 	<SCRIPT>
-		function saku(){
+	function saku(){
 	var a = "<?php 		
 	$result = mysql_query("SELECT * FROM preview ORDER BY id DESC" ,$cn1);
 		$i=0;
@@ -157,13 +157,55 @@ $result = mysql_query("INSERT INTO complet(name,day,day1,day2,reader,name1,name2
 			location.href="http://localhost:8080/deletefilel.php?photo0=<?php echo $photo0; ?> & photo1=<?php echo $photo1; ?> & photo2=<?php echo $photo2; ?> & photo3=<?php echo $photo3; ?> & photo4=<?php echo $photo4; ?> & ";
 		};
 	</SCRIPT>
+	<SCRIPT>
+	function saku1(){
+	var ab = "<?php 		
+	$result = mysql_query("SELECT * FROM preview ORDER BY id DESC" ,$cn1);
+		$i=0;
+		while($row = mysql_fetch_array($result))
+		{
+			$name = $row["name"];
+			$day  = $row["day"];
+			$day1  = $row["day1"];
+			$day2  = $row["day2"];
+			$reader=$row["reader"];
+			$name1 = $row["name1"];
+			$name2 = $row["name2"];
+			$info = $row["info"];
+			$capc = $row["capc"];
+			$photo0 = $row["photo0"];
+			$photo1 = $row["photo1"];
+			$photo2 = $row["photo2"];
+			$photo3 = $row["photo3"];
+			$photo4 = $row["photo4"];
+			$photo11 = $row["photo11"];
+			$cap1 = $row["cap1"];
+			$cap2 = $row["cap2"];
+			$cap3 = $row["cap3"];
+			$cap4 = $row["cap4"];
+			$cap11 = $row["cap11"];
+			$kg = $row["kg"];
+			$mmhg = $row["mmhg"];
+ 			 
+			 $yotei = nl2br($yotei);
+			
+			 	 
+				
+				break;
+		}
+		 ?>";
+
+			location.href="http://localhost:8080/backlist.php?photo0=<?php echo $photo0; ?> & photo1=<?php echo $photo1; ?> & photo2=<?php echo $photo2; ?> & photo3=<?php echo $photo3; ?> & photo4=<?php echo $photo4; ?> & photo11=<?php echo $photo11; ?>";
+		};
+	</SCRIPT>
 
 </head>
 <body>
-	<h1 style="text-align:center;font-family:'ふい字';">本登録をしました。正常に印刷登録されました。</h1><br>
+	<h1 style="text-align:center;font-family: 'ＫＦひま字';">本登録をしました。正常に印刷登録されました。</h1><br>
 
 		<div align="center">
-    <a href="#" onclick="saku();"><img align="center"src="../img/m.png" alt=""></a>
+    <a href="#" onclick="saku();"><img align="center"src="../img/btn_hold_end.png" alt=""></a>
+    <a href="#" onclick="saku1();"><img align="center"src="../img/btn_keizoku.png"></a>
 	</div>
 	<p align="center"><b>※写真の枚数変更はできませんが、文言の変更はできます。</b></p>
 </body>

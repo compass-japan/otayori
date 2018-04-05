@@ -1,5 +1,5 @@
-body{
-	font-family: "ふい字";
+﻿body{
+	font-family: "ＫＦひま字";
 }
 .wrap{
 	width:1000px;
@@ -12,23 +12,62 @@ body{
 .zentai{
 	
 	width:450px;
-	padding-bottom: 14px;
+	padding-bottom: 15px;
 	margin:auto;
 	background-color:#deb887;
 	float:left;
 }
 .zentai h2,p,h4{
-	margin-left: 20px;
+	margin-left: 13px;
 
 }
-
-.zentai1{
+.zentai0{
 	padding-top: 10px;
-	padding-bottom: 110px;
+	padding-bottom: 156px;
 	width:400px;
 	margin:auto;
 	background-color:#b79b5b;
 	
+}
+.zentai1{
+	padding-top: 10px;
+	padding-bottom: 156px;
+	width:400px;
+	margin:auto;
+	background-color:#b79b5b;
+	
+}
+.zentai11{
+	padding-top: 10px;
+	padding-bottom: 125px;
+	width:400px;
+	margin:auto;
+	background-color:#b79b5b;
+	
+}
+.zentai111{
+	padding-top: 10px;
+	padding-bottom: 89px;
+	width:400px;
+	margin:auto;
+	background-color:#b79b5b;
+	
+}
+.zentai12{
+	padding-top: 10px;
+	padding-bottom: 189px;
+	width:400px;
+	margin:auto;
+	background-color:#b79b5b;
+	
+}
+.zentai{
+	
+	width:450px;
+	padding-bottom: 13px;
+	margin:auto;
+	background-color:#deb887;
+	float:left;
 }
 textarea{
 	width:360px;
@@ -67,9 +106,20 @@ textarea{
 	background-color:#d6c6af;
 	float:right;
 }
+.namez{
+	font-size: 20px;
+}
+.name11{
+	width:530px;
+	padding-bottom: 14px;
+	margin:auto;
+	background-color:#d6c6af;
+	float:right;
+	margin-bottom: 15px;
+}
 .name1{
 	padding-top: 10px;
-	padding-bottom: 17px;
+	padding-bottom: 7px;
 	width:500px;
 	margin:auto;
 	background-color:#9e9478;
@@ -127,9 +177,31 @@ select{
 	font-size:12px;
 	color:#aaa;
 }
+.cursor{
+	cursor: pointer;
+}
+
 div.bt{
 	width:336px;
 	margin:10px auto 0 auto;
+	//margin-top: 10px;
+	text-align:center;
+}
+div.bt0{
+	width:336px;
+	margin:-10px auto 0 auto;
+	//margin-top: 10px;
+	text-align:center;
+}
+div.bt1{
+	width:336px;
+	margin:30px auto 0 auto;
+	//margin-top: 10px;
+	text-align:center;
+}
+div.bt11{
+	width:336px;
+	margin:70px auto 0 auto;
 	//margin-top: 10px;
 	text-align:center;
 }

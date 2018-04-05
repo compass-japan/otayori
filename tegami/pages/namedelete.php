@@ -5,7 +5,7 @@ $db=mysql_select_db("meibo",$cn);
 mysql_query('SET NAMES utf8', $cn );
 if(!empty($_POST["name"])){
 
-$result = mysql_query("INSERT INTO meibo(name) VALUE(\"$_POST[name]\")",$cn);
+$result = mysql_query("INSERT INTO meibo(name,roomno) VALUE(\"$_POST[name]\"\"$_POST[roomno]\")",$cn);
 	}
 	$id = $_GET["id"];
 
@@ -50,7 +50,7 @@ select.sizechange{
 
 		<div class="namelist" align="center">
 			<?php
-			$result = mysql_query("SELECT * FROM meibo",$cn);
+			$result = mysql_query("SELECT * FROM meibo order by roomno ASC",$cn);
 
 			$cnt = 0;
       while($array = mysql_fetch_array($result)) {

@@ -13,13 +13,13 @@ $result = mysql_query("INSERT INTO complet(name,day,reader,name1,name2,info,yote
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>2018</title>
     <link rel="stylesheet" href="../css/home.css" />
 </head>
 <body>
 <br>
 
-	<h1 align="center"></h1>
+	<h1 align="center">２０１８年</h1>
 	<form method="post" action="update.php"enctype="multipart/form-data"> 
         <div class="kako">        	
             <div align="center">

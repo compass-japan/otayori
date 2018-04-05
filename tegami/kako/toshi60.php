@@ -17,7 +17,10 @@ $result = mysql_query("INSERT INTO complet(name,day,reader,name1,name2,info,yote
     <link rel="stylesheet" href="../css/home.css" />
 </head>
 <body"#deb887">
-	<h1 align="center"></h1>
+<br>
+
+    
+	<h1 align="center">２０２２年</h1>
 	<form method="post" action="update.php"enctype="multipart/form-data"> 
         <div class="kako">        	
             <div align="center">

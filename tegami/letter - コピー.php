@@ -438,7 +438,7 @@ window.document.onkeypress=lineCheck;
 				<div align="center">
 					<input type="image" src="img/22.png" name="send" id="form" onclick="goServletB();">
 					<input type="image" src="img/mikan.png" name="send" id="form" onclick="goServletC();">
-aaaa
+
 				</div>
 			</div>
 

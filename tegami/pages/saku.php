@@ -120,7 +120,7 @@ $mmhg = $_REQUEST["mmhg"];
 $cn1=mysql_connect("localhost","root","root");
 $db=mysql_select_db("tegami",$cn1);
 if(!empty($_POST["name"])){
-$result = mysql_query("UPDATE preview SET name=\"$name\",name1=\"$name1\",name2=\"$name2\",day=\"$day\",day1=\"$day1\",day2=\"$day3\",reader=\"$reader\",kg=\"$kg\",mmhg=\"$mmhg\",photo0=\"$filename0\",info=\"$info\",capc=\"$capc\",photo1=\"\",photo2=\"\",photo3=\"\",photo4=\"\",photo11=\"\",cap1=\"\",cap2=\"\",cap3=\"\",cap4=\"\",cap11=\"$cap11\"",$cn1);
+$result = mysql_query("UPDATE preview SET name=\"$name\",name1=\"$name1\",name2=\"$name2\",day=\"$day\",day1=\"$day1\",day2=\"$day2\",reader=\"$reader\",kg=\"$kg\",mmhg=\"$mmhg\",photo0=\"$filename0\",info=\"$info\",capc=\"$capc\",photo1=\"\",photo2=\"\",photo3=\"\",photo4=\"\",photo11=\"\",cap1=\"\",cap2=\"\",cap3=\"\",cap4=\"\",cap11=\"$cap11\"",$cn1);
 	}
 //$con=mysqli_connect($DBSERVER, $DBUSER, $DBPASSWORD, $DBNAME);
 //$sql="UPDATE complet SET name=\"$name\",name1=\"$name1\",name2=\"$name2\",day=\"$day\",reader=\"$reader\",kg=\"$kg\",mmhg=\"$mmhg\",photo0=\"$filename0\",info=\"$info\",yotei=\"$yotei\",photo1=\"$filename\",photo2=\"$filename1\",photo3=\"$filename2\",photo4=\"$filename3\",cap1=\"$cap1\",cap2=\"$cap2\",cap3=\"$cap3\",cap4=\"$cap4\" WHERE no = $no ";

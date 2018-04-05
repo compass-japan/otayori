@@ -71,14 +71,29 @@ if (is_uploaded_file($_FILES["imgup11"]["tmp_name"])) {
 	$filename11 = NULL;	
 }     
 
-	if($file11){
-	$style = "style=\"display:none;\"";
-	}
-	
-	if(!$file11){
-	$style1 = "style=\"display:none;\"";
-
-
+	//写真1枚用
+	$file111 = $_POST["imgup111"];
+	$file01 = $_POST["imgup01"];
+	$file_02 = $_POST["imgup02"];
+	$file_03 = $_POST["imgup03"];
+	$file_04 = $_POST["imgup04"];
+	if($file111){
+		$style = "style=\"display:none;\"";
+		$filename11=$path . $file111;
+	}else{
+		$style1 = "style=\"display:none;\"";
+						//写真4枚用
+		if($file01){
+			$filename = $path . $file01;
+		}if($file_02){
+			$filename1=$path . $file_02;
+		}
+		if($file_03){
+			$filename2=$path . $file_03;
+		}
+		if($file_04){
+			$filename3=$path . $file_04;
+		}
 	}
 
 $cn1=mysql_connect("localhost","root","root");
@@ -246,8 +261,6 @@ $result = mysql_query("INSERT INTO preview(name,day,day1,day2,reader,name1,name2
 			$kg = $row["kg"];
 			$mmhg = $row["mmhg"];
 
-  
-
 			 $yotei = nl2br($yotei);
 			 echo <<<EOM
 			<input type="hidden" name="id" value="$no">
@@ -319,13 +332,13 @@ EOM;
 					</div>
 					
 					<div class="hader_bg">
-						<table class="photobale"align="center" $style>
-							<tr><td width="70"></td><td align="left" valign="top"><img src="$photo1"class="photo"></td><td align="right" valign="top"><img class="photo"src="$photo2" alt=""></td><td width="70"></td></tr>
-							<tr><td width="70"></td><td class="capv" align="center">$cap1</td><td class="capv"align="center">$cap2</td><td width="70"></td></tr>
-							<tr><td width="70"></td><td align="left" valign="bottom"><img class="photo"src="$photo3" alt=""></td><td align="right" valign="bottom">　<img class="photo"src="$photo4" alt=""></td><td width="70"></td></tr>
-							<tr><td width="70"></td><td class="capv"align="center"height="40">$cap3</td><td class="capv"align="center">$cap4</td><td width="70"></td></tr>
+						<table class="photobale" align="center" $style>
+							<tr><td align="left" valign="top"><img src="$photo1"class="photo"></td><td align="right" valign="top"><img class="photo"src="$photo2" alt=""></td></tr>
+							<tr><td class="capv" align="center">$cap1</td><td class="capv"align="center">$cap2</td></tr>
+							<tr><td align="left" valign="bottom"><img class="photo"src="$photo3" alt=""></td><td align="right" valign="bottom">　<img class="photo"src="$photo4" alt=""></td></tr>
+							<tr><td class="capv"align="center"height="40">$cap3</td><td class="capv"align="center">$cap4</td></tr>
 						</table>
-						<table class="photobale11"align="center" $style1>
+						<table class="photobale11" align="center" $style1>
 							<tr><td><img class="photo11" src="$photo11"></td></tr>
 						</table>
 						<div align="center" style="font-size:27px;">$cap11</div>
@@ -341,8 +354,8 @@ break;
 }
 ?>
 
-<div id="print"align="center">
-			<a href="#" onclick="oo();"><img src="../img/familyHistory_print.png"></a>
+<div id="print" align="center">
+			<a href="#" onclick="oo();"><img src="../img/btn_register_test.png"></a>
 			<a href="#" id="back"><img src="../img/back_l.png"></a>
 </div>
 </form>

@@ -21,9 +21,9 @@ $result = mysql_query("INSERT INTO otayori(eyar,mooth,name,syumi,club) VALUE(\"$
 		</div>
 		<div align="center">
 			<br><br>
-			<h1 style="font-family:'ふい字';">本登録リスト</h1>
+			<h1 style="font-family:'ＫＦひま字';">本登録リスト</h1>
 			<!--<a href="../kako/toshi.php"><img src="../img/2016.png"width="100"></a>-->
-			<a href="../kako/toshi10.php"><img src="../img/2017.png"width="100"></a>
+			<!--<img src="../img/2017_off.png"width="100">-->
 			<a href="../kako/toshi20.php"><img src="../img/2018.png"width="100"></a>
 			<a href="../kako/toshi30.php"><img src="../img/2019.png"width="100"></a><br><br>
 			<a href="../kako/toshi40.php"><img src="../img/2020.png"width="100"></a>
@@ -34,7 +34,7 @@ $result = mysql_query("INSERT INTO otayori(eyar,mooth,name,syumi,club) VALUE(\"$
 			<a href="../kako/toshi9.php"><img src="../img/2025.png"width="100"></a>-->
 
 			<div class="toshi">
-        		<a href="../letter.php"><img src="../img/m.png" alt=""></a>
+        		<a href="../letters.php"><img src="../img/m.png" alt=""></a>
     		</div>
 		</div>
 

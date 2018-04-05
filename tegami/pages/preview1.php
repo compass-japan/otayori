@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 $path = "../img/photo/";
 $file0 = $_FILES["imgup0"]["name"];
@@ -70,6 +70,30 @@ if (is_uploaded_file($_FILES["imgup11"]["tmp_name"])) {
 } else {
 		$filename11 = $_POST["photo11"];
 }
+//写真1枚用
+	$file111 = $_POST["imgup111"];
+	$file01 = $_POST["imgup01"];
+	$file_02 = $_POST["imgup02"];
+	$file_03 = $_POST["imgup03"];
+	$file_04 = $_POST["imgup04"];
+	if($file111){
+		$style = "style=\"display:none;\"";
+		$filename11=$path . $file111;
+	}else{
+		$style1 = "style=\"display:none;\"";
+						//写真4枚用
+		if($file01){
+			$filename = $path . $file01;
+		}if($file_02){
+			$filename1=$path . $file_02;
+		}
+		if($file_03){
+			$filename2=$path . $file_03;
+		}
+		if($file_04){
+			$filename3=$path . $file_04;
+		}
+	}
 
 
 $cn1=mysql_connect("localhost","root","root");
@@ -333,7 +357,7 @@ break;
 ?>
 
 <div id="print"align="center">
-			<a href="#" onclick="oo();"><img src="../img/familyHistory_p.png"></a>
+			<a href="#" onclick="oo();"><img src="../img/btn_register.png"></a>
 			<a href="#" onclick="history.back(); return false;"><img src="../img/back_l.png"></a>
 </div>
 </form>
